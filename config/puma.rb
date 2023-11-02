@@ -31,5 +31,11 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 
+threads 1,4
+
+bind "unix://tmp/sockets/trainme-puma.sock"
+
+workers 0
+
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
