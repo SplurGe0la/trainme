@@ -1,2 +1,7 @@
 class ApplicationController < ActionController::Base
+  def index
+    user = current_user
+
+    render html: "Hello #{user&.email}!"
+  end
 end
