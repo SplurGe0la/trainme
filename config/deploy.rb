@@ -9,7 +9,7 @@ set :deploy_to, "/home/cap-demo/app"
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "vendor", "storage"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "vendor/javascript", "storage"
 
 set :user,            'cap-demo'
 set :puma_threads,    [4, 16]
