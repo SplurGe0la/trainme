@@ -6,6 +6,10 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+```bash
+ruby 3.2.2
+```
+
 
 * System dependencies
 
@@ -13,12 +17,26 @@ Things you may want to cover:
 
 * Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
+```bash
+docker compose run
+rails db:setup
+```
 * Deployment instructions
 
-* ...
+```bash
+cap production deploy
+```
+
+* Local development
+
+fill in cerdentials by
+
+```bash
+EDITOR="code --wait" rails credentials:edit
+```
+
+to start rails server run 
+
+```bash
+./bin/dev
+```
