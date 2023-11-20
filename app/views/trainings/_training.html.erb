@@ -1,0 +1,42 @@
+<div id="<%= dom_id training %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Format:</strong>
+    <%= training.format %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">State:</strong>
+    <%= training.state %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Primary group:</strong>
+    <%= training.primary_group_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Support group:</strong>
+    <%= training.support_group_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= training.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Started at:</strong>
+    <%= training.started_at %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Ended at:</strong>
+    <%= training.ended_at %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this training", training, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this training", edit_training_path(training), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

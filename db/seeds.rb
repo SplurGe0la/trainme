@@ -8,4 +8,7 @@ MuscleGroup.create(name: "Legs", group: :primary)
 
 MuscleGroup.create(name: "Abdominal", group: :abdominal)
 
+MuscleGroup.create(name: "Byceps", group: :support)
+MuscleGroup.create(name: "Triceps", group: :support)
+
 
