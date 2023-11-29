@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_20_190311) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_29_144829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "title"
+    t.text "desc"
+    t.bigint "muscle_group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["muscle_group_id"], name: "index_exercises_on_muscle_group_id"
+  end
 
   create_table "muscle_groups", force: :cascade do |t|
     t.string "name"
@@ -52,6 +61,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_190311) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "exercises", "muscle_groups"
   add_foreign_key "trainings", "muscle_groups", column: "primary_group_id"
   add_foreign_key "trainings", "muscle_groups", column: "support_group_id"
   add_foreign_key "trainings", "users"
